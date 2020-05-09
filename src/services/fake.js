@@ -21,9 +21,12 @@ const getFakeLyrics = async (realLyrics) => {
         let numSyllables = getNumSyllables(word);
         if(numSyllables > 1){
             let rhymes = await axios.get(`${url}?rel_rhy=${word}&max=20&md=s`);
-            console.log('rhymes: ', rhymes);
-            if(rhymes.data.length > 0){
-                fakeLyrics.push(rhymes.data[0].word);
+            rhymes = rhymes.data.filter(word => {
+                return word.numSyllables === numSyllables && !word.word.includes(' ');
+            });
+            if(rhymes.length > 0){
+                const rhyme = rhymes[Math.floor(Math.random() * rhymes.length)].word;
+                fakeLyrics.push(rhymes[0].word);
             }
             else fakeLyrics.push(word);
         }
