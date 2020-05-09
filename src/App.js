@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import getFakeLyrics from './services/fake.js';
 import style from './App.module.css';
-import { InputDisplay } from './components';
+import { InputDisplay, TextDisplay } from './components';
 
 const App = () => {
     const [lyrics, setLyrics] = useState(null);
@@ -11,14 +11,16 @@ const App = () => {
     
     const fetchLyrics = async (title) => {
         const data = await axios.get(`${url}${title}`);
-        setLyrics(data.data.content[0].lyrics);
-        console.log(lyrics);
-        console.log(getFakeLyrics(lyrics));
+        const fakeLyrics = await getFakeLyrics(data.data.content[0].lyrics);
+        setLyrics(fakeLyrics);
+        console.log(fakeLyrics);
     }
+    
     return(
         <div>
             <h1>App</h1>
             <InputDisplay fetchLyrics={fetchLyrics}/>
+            <TextDisplay lyrics={lyrics} />
         </div>
     );
 }
