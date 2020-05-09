@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import axios from 'axios';
+import getFakeLyrics from './services/fake.js';
+import style from './App.module.css';
+import { InputDisplay } from './components';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const [lyrics, setLyrics] = useState(null);
+    
+    const url = 'https://api.canarado.xyz/lyrics/';
+    
+    const fetchLyrics = async (title) => {
+        const data = await axios.get(`${url}${title}`);
+        setLyrics(data.data.content[0].lyrics);
+        console.log(lyrics);
+        console.log(getFakeLyrics(lyrics));
+    }
+    return(
+        <div>
+            <h1>App</h1>
+            <InputDisplay fetchLyrics={fetchLyrics}/>
+        </div>
+    );
 }
 
 export default App;
