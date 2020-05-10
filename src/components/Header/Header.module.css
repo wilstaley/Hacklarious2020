@@ -1,0 +1,24 @@
+.header{
+    width: 100%;
+    background: var(--blue);
+}
+
+.title{
+    font-family: 'Rubik Mono One', sans-serif;
+    color: var(--light-green);
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-shadow: 2px 2px var(--pink);
+    margin-bottom: 0;
+    margin-top: 3.5rem;
+    text-align: center;
+    color: var(--white);
+}
+
+.subtitle{
+    color: black;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--white);
+}

@@ -1,6 +1,26 @@
+:root {
+  /* --light-yellow: #f6f578;
+  --dark-yellow: #f6d743;
+  --light-green: #649d66;
+  --dark-green: #06623b; */
+  --blue: #2f2fa2;
+  --white: #eeddff;
+  --pink: #f64c72;
+}
+
 body{
     margin: 0;
+    background: var(--white);
 }
+
 *{
     box-sizing: border-box;
+    font-family: 'Inconsolata', monospace;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

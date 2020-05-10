@@ -11,11 +11,12 @@ const InputDisplay = ({fetchLyrics}) => {
     }
     
     return(
-        <form onSubmit={submitSong}>
+        <form className={style.form} onSubmit={submitSong}>
             <input 
                 type='text'
                 value={term}
                 placeholder='Enter song title'
+                className={style.song_input}
                 onChange={(e) => setTerm(e.target.value)}
             />
         </form>

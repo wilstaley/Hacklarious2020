@@ -3,9 +3,9 @@ import style from './TextDisplay.module.css';
 
 const TextDisplay = ({lyrics}) => {
     return lyrics ? (
-        <p>{lyrics}</p>
+        <p className={style.lyrics}>{lyrics}</p>
     )
-    : <></>
+    : <p className={style.loading}></p>
 }
 
 export default TextDisplay;

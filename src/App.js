@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import getFakeLyrics from './services/fake.js';
 import style from './App.module.css';
-import { InputDisplay, TextDisplay } from './components';
+import { Header, InputDisplay, TextDisplay } from './components';
 
 const App = () => {
     const [lyrics, setLyrics] = useState(null);
@@ -10,6 +10,7 @@ const App = () => {
     const url = 'https://api.canarado.xyz/lyrics/';
     
     const fetchLyrics = async (title) => {
+        setLyrics('Generating Fake Lyrics...');
         const data = await axios.get(`${url}${title}`);
         const fakeLyrics = await getFakeLyrics(data.data.content[0].lyrics);
         setLyrics(fakeLyrics);
@@ -17,8 +18,8 @@ const App = () => {
     }
     
     return(
-        <div>
-            <h1>App</h1>
+        <div className={style.wrapper}>
+            <Header />
             <InputDisplay fetchLyrics={fetchLyrics}/>
             <TextDisplay lyrics={lyrics} />
         </div>

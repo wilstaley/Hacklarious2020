@@ -26,7 +26,7 @@ const getFakeLyrics = async (realLyrics) => {
             });
             if(rhymes.length > 0){
                 const rhyme = rhymes[Math.floor(Math.random() * rhymes.length)].word;
-                fakeLyrics.push(rhymes[0].word);
+                fakeLyrics.push(rhyme);
             }
             else fakeLyrics.push(word);
         }
