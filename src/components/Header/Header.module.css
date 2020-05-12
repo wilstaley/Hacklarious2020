@@ -1,24 +1,53 @@
 .header{
-    width: 100%;
-    background: var(--blue);
+    position: -webkit-sticky;
+  position: sticky;
+  top: 21.4px;
 }
 
 .title{
-    font-family: 'Rubik Mono One', sans-serif;
-    color: var(--light-green);
-    font-size: 2.8rem;
-    font-weight: 800;
-    text-shadow: 2px 2px var(--pink);
-    margin-bottom: 0;
-    margin-top: 3.5rem;
+    font-size: 2rem;
+    font-weight: 900;
     text-align: center;
-    color: var(--white);
 }
 
 .subtitle{
-    color: black;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.info{
+    margin: 1.5rem;
+}
+
+.question{
+    font-weight: 700;
+    display: block;
+    margin-bottom: .5rem;
+    text-decoration: underline;
+}
+
+
+
+/* .header{
+    width: 100%;
+    background: var(--yellow);
+}
+
+.title{
+    font-family: 'Eczar', serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 0;
+    margin-top: 3.5rem;
+    text-align: center;
+    color: var(--other-blue);
+}
+
+.subtitle{
     text-align: center;
     font-size: 1.4rem;
     font-weight: 400;
-    color: var(--white);
-}
+    color: var(--other-blue);
+    margin-top: .8rem;
+} */

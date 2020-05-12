@@ -15,7 +15,7 @@ const InputDisplay = ({fetchLyrics}) => {
             <input 
                 type='text'
                 value={term}
-                placeholder='Enter song title'
+                placeholder='Find a song...'
                 className={style.song_input}
                 onChange={(e) => setTerm(e.target.value)}
             />

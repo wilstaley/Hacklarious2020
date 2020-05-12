@@ -19,9 +19,13 @@ const App = () => {
     
     return(
         <div className={style.wrapper}>
-            <Header />
-            <InputDisplay fetchLyrics={fetchLyrics}/>
-            <TextDisplay lyrics={lyrics} />
+            <div className={style.left_bar}>
+                <Header />
+            </div>
+            <div className={style.right_bar}>
+                <InputDisplay fetchLyrics={fetchLyrics}/>
+                <TextDisplay lyrics={lyrics} />
+            </div>
         </div>
     );
 }
